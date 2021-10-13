@@ -22,7 +22,8 @@
           }
       return (
         <div>
-        <Images  items = {imageList}
+        <Images 
+         items = {imageList}
         setSelectedImg={setSelectedImg} 
         />
         
