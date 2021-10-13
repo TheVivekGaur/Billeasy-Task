@@ -1,16 +1,19 @@
-import react from 'react';
-import Image from './Image';
+import React from 'react';
+import './Images.css'
 
-const Images= ({items}) => {
- console.log(items)
+const Images= ({items,  setSelectedImg}) => {
+ // console.log(items)
  return(
-  <div>
-  <h1>Billeasy</h1>
-  { 
-    items.map((item, index) => (
-     <Image key={index}  url={item.urls} />
-    ))
-  }
+  <div className = "img-grid">
+ {
+    items && items.map( item => (
+     <div className="img-wrap" key={item.id}
+          onClick={()=> setSelectedImg(item.urls.thumb)}
+     >
+      <img src={item.urls.thumb} alt="fetchedimage" />
+      </div>
+    ))}
+  
   </div>
  )
 }
